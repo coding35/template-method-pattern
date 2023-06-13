@@ -11,6 +11,15 @@ for (int i = 0; i < 25; i++)
 
 logger = new UDPLogger();
 
+logger.ToggleConsoleToTerminal(true);
+
+for (int i = 0; i < 25; i++)
+{
+    logger.Log(new LoggerMessage("Main", $"Iteration {i}", null, TraceLevel.Info));
+}
+
+logger.ToggleConsoleToTerminal(false);
+
 for (int i = 0; i < 25; i++)
 {
     logger.Log(new LoggerMessage("Main", $"Iteration {i}", null, TraceLevel.Info));

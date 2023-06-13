@@ -15,8 +15,8 @@ public class UDPLogger : Logger
     }
     
     // override hook operation
-    protected override bool ConsoleToTerminal() // hook operation
+    protected override bool ConsoleToTerminal() 
     {
-        return false;
+        return _enableConsoleToTerminal;
     }
 }

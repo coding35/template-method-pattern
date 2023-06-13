@@ -6,6 +6,7 @@ public abstract class Logger
 {
     private DateTime _logTime = DateTime.Now;
     private string _hostInfo = string.Empty;
+    protected bool _enableConsoleToTerminal;
     protected string Message { get; private set; } = null!;
     public void Log(LoggerMessage log)
     {
@@ -40,5 +41,10 @@ public abstract class Logger
     private void FormatMessage(LoggerMessage msg) // concrete operation
     {
         Message = $"{msg.LogTime} {msg.HostInfo} {msg.MethodName} {msg.Message} {msg.Exception} {msg.Level}";
+    }
+    
+    public void ToggleConsoleToTerminal(bool enabled) // hook operation
+    {
+        _enableConsoleToTerminal = enabled;
     }
 }
